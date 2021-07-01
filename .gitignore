@@ -2,3 +2,7 @@ config.ini
 node_modules
 
 *.swp
+
+public/css/app.css
+
+public/js/app.js
