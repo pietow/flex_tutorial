@@ -48,16 +48,126 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      parameters: ['20%', 0, '20%', 1, '20%', 1]
+      parameters: ["20%", 0, "20%", 0, "20%", 0],
+      factor1: "",
+      factor2: "",
+      factor3: ""
     };
   },
   methods: {
     flexChange: function flexChange(event, i) {
-      console.log(event.target.value);
-      this.parameters[i] = event.target.value;
+      var input = event.target.value;
+      this.parameters[i] = input; // input = float(input);
+
+      if (i === 0) {
+        input = +input.replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/`a-zA-z]/gi, "");
+        this.factor1 = input / 100;
+        console.log(input);
+      }
+
+      if (i === 2) {
+        input = +input.replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/`a-zA-z]/gi, "");
+        this.factor2 = input / 100;
+        console.log(input);
+      }
+
+      if (i === 4) {
+        input = +input.replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/`a-zA-z]/gi, "");
+        this.factor3 = input / 100;
+        console.log(input);
+      }
+    },
+    getRemainder: function getRemainder(i) {
+      return this.parameters[i].toString();
+    },
+    getSumGrowth: function getSumGrowth() {
+      return +this.parameters[1] + +this.parameters[3] + +this.parameters[5];
     }
   }
 });
@@ -97,7 +207,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.flex[data-v-0947cc84] {\n  display: flex;\n  border: solid 2px black;\n  padding: .005em 0;\n  height: 6em;\n  opacity: .8;\n}\n[class*=\"item-\"][data-v-0947cc84] {\n  --basis1: 20%;\n  --growth1: 0;\n  --basis2: 20%;\n  --growth2: 1;\n  --basis3: 20%;\n  --growth3: 1;\n  border: red 1px solid;\n  flex: 1 20%;\n  min-width: 20%;\n  position:relative;\n}\n.item-1[data-v-0947cc84] {\n  flex: var(--growth1) var(--basis1);\n}\n.item-1[data-v-0947cc84]::before{\n  content:'  ';\n  background: yellow;\n  height:5.7em;\n  z-index:-1;\n  width: 100%;\n  display: block;\n  border: solid 1px gray;\n  position: absolute;\n}\n.item-2[data-v-0947cc84] {\n  flex: var(--growth2) var(--basis2);\n}\n.item-3[data-v-0947cc84] {\n  flex: var(--growth3) var(--basis3);\n}\n.flex > div > *[data-v-0947cc84]{\n  padding: .5em;\n}\ninput[data-v-0947cc84] {\n  border: 1px solid gray;\n  height: 2em;\n  width: 5em;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.flex[data-v-0947cc84] {\n  display: flex;\n  border: solid 2px black;\n  padding: 0.005em 0;\n  height: 6em;\n  opacity: 0.8;\n  position: relative;\n  --basis1: 20%;\n  --growth1: 0;\n  --basis2: 20%;\n  --growth2: 1;\n  --basis3: 20%;\n  --growth3: 1;\n  --pseudo1: 0.2;\n  --pseudo2: 0.2;\n  --pseudo3: 0.2;\n}\np[data-v-0947cc84] {\n  text-align: center;\n}\n[class*=\"item-\"][data-v-0947cc84] {\n  border: red 1px solid;\n  flex: 1 20%;\n  /* min-width: 20%; */\n  position: relative;\n}\n.item-1[data-v-0947cc84] {\n  flex: var(--growth1) var(--basis1);\n}\n.item-1[data-v-0947cc84]::before {\n  content: \"  \";\n  background: yellow;\n  height: 5.7em;\n  z-index: -1;\n  width: calc(var(--pseudo1) * var(--container));\n  display: block;\n  border: solid 1px gray;\n  position: absolute;\n}\n.item-2[data-v-0947cc84]::before {\n  content: \"  \";\n  background: yellow;\n  height: 5.7em;\n  z-index: -1;\n  width: calc(var(--pseudo1) * var(--container));\n  display: block;\n  border: solid 1px gray;\n  position: absolute;\n}\n.item-3[data-v-0947cc84]::before {\n  content: \"  \";\n  background: yellow;\n  height: 5.7em;\n  z-index: -1;\n  width: calc(var(--pseudo1) * var(--container));\n  display: block;\n  border: solid 1px gray;\n  position: absolute;\n}\n.flex[data-v-0947cc84]::before {\n  content: \"Remainder\";\n  background: gray;\n  height: 2.95em;\n  z-index: -1;\n  width:100%;\n  /* width: calc( */\n  /*   (1 - (var(--pseudo1) + var(--pseudo2) + var(--pseudo3))) * var(--container) */\n  /* ); */\n  /* width: calc((1 - var(--pseudo1)) * var(--container)); */\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  font-weight: bold;\n  font-size: 2em;\n  border: solid 1px gray;\n  position: absolute;\n  top: 0em;\n  right: 0em;\n}\n.item-2[data-v-0947cc84] {\n  flex: var(--growth2) var(--basis2);\n}\n.item-3[data-v-0947cc84] {\n  flex: var(--growth3) var(--basis3);\n}\n.flex > div > *[data-v-0947cc84] {\n  padding: 0.5em;\n}\ninput[data-v-0947cc84] {\n  border: 1px solid gray;\n  height: 2em;\n  width: 5em;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -597,6 +707,80 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("div", { staticClass: "flex fraction" }, [
+      _c(
+        "p",
+        {
+          staticClass: "item-1",
+          style:
+            "--basis1: " +
+            _vm.parameters[0] +
+            ";--growth1: " +
+            _vm.parameters[1] +
+            ";--pseudo1: " +
+            _vm.factor1 +
+            ";"
+        },
+        [
+          _vm._v("\n      " + _vm._s(_vm.getRemainder(1)) + "\n      "),
+          _c("br"),
+          _vm._v("\n      —\n      "),
+          _c("br"),
+          _vm._v("\n      " + _vm._s(_vm.getSumGrowth()) + "\n      "),
+          _c("br"),
+          _vm._v("\n      of Remainder\n    ")
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "p",
+        {
+          staticClass: "item-2",
+          style:
+            "--basis1: " +
+            _vm.parameters[2] +
+            ";--growth2: " +
+            _vm.parameters[3] +
+            ";--pseudo2: " +
+            _vm.factor2 +
+            ";"
+        },
+        [
+          _vm._v("\n      " + _vm._s(_vm.getRemainder(3)) + "\n      "),
+          _c("br"),
+          _vm._v("\n      —\n      "),
+          _c("br"),
+          _vm._v("\n      " + _vm._s(_vm.getSumGrowth()) + "\n      "),
+          _c("br"),
+          _vm._v("\n      of Remainder\n    ")
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "p",
+        {
+          staticClass: "item-3",
+          style:
+            "--basis1: " +
+            _vm.parameters[4] +
+            ";--growth3: " +
+            _vm.parameters[5] +
+            ";--pseudo3: " +
+            _vm.factor3 +
+            ";"
+        },
+        [
+          _vm._v("\n      " + _vm._s(_vm.getRemainder(5)) + "\n      "),
+          _c("br"),
+          _vm._v("\n      —\n      "),
+          _c("br"),
+          _vm._v("\n      " + _vm._s(_vm.getSumGrowth()) + "\n      "),
+          _c("br"),
+          _vm._v("\n      of Remainder\n    ")
+        ]
+      )
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "flex" }, [
       _c(
         "div",
@@ -607,6 +791,8 @@ var render = function() {
             _vm.parameters[0] +
             ";--growth1: " +
             _vm.parameters[1] +
+            ";--pseudo1: " +
+            _vm.factor1 +
             ";"
         },
         [
@@ -681,6 +867,8 @@ var render = function() {
             _vm.parameters[2] +
             ";--growth2: " +
             _vm.parameters[3] +
+            ";--pseudo2: " +
+            _vm.factor2 +
             ";"
         },
         [
@@ -755,6 +943,8 @@ var render = function() {
             _vm.parameters[4] +
             ";--growth3: " +
             _vm.parameters[5] +
+            ";--pseudo3: " +
+            _vm.factor3 +
             ";"
         },
         [

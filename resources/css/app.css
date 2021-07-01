@@ -141,8 +141,16 @@ max-width: 100%;
 
 /*double container to center page content*/
 .container {
-    max-width: 1700px;
+    --container: 1700px;
+    max-width: var(--container);
     margin: 30vh auto 0 2em;
     background: white;
+    border-radius: 1em;
 }
     
+h1 {
+    font-size: 3em;
+    text-align: center;
+    width: 100%;
+    padding: 1em;
+}
