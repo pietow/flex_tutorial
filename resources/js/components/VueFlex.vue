@@ -18,7 +18,7 @@
       <p
         class="item-2"
         :style="
-          `--basis1: ${parameters[2]};--growth2: ${parameters[3]};--pseudo2: ${factor2};`
+          `--basis2: ${parameters[2]};--growth2: ${parameters[3]};--pseudo2: ${factor2};`
         "
       >
         {{ getRemainder(3) }}
@@ -32,7 +32,7 @@
       <p
         class="item-3"
         :style="
-          `--basis1: ${parameters[4]};--growth3: ${parameters[5]};--pseudo3: ${factor3};`
+          `--basis3: ${parameters[4]};--growth3: ${parameters[5]};--pseudo3: ${factor3};`
         "
       >
         {{ getRemainder(5) }}
@@ -71,7 +71,7 @@
       <div
         class="item-2"
         :style="
-          `--basis1: ${parameters[2]};--growth2: ${parameters[3]};--pseudo2: ${factor2};`
+          `--basis2: ${parameters[2]};--growth2: ${parameters[3]};--pseudo2: ${factor2};`
         "
       >
         <div>
@@ -94,7 +94,7 @@
       <div
         class="item-3"
         :style="
-          `--basis1: ${parameters[4]};--growth3: ${parameters[5]};--pseudo3: ${factor3};`
+          `--basis3: ${parameters[4]};--growth3: ${parameters[5]};--pseudo3: ${factor3};`
         "
       >
         <div>
@@ -218,7 +218,7 @@ p {
   background: yellow;
   height: 5.7em;
   z-index: -1;
-  width: calc(var(--pseudo1) * var(--container));
+  width: calc(var(--pseudo2) * var(--container));
   display: block;
   border: solid 1px gray;
   position: absolute;
@@ -228,7 +228,7 @@ p {
   background: yellow;
   height: 5.7em;
   z-index: -1;
-  width: calc(var(--pseudo1) * var(--container));
+  width: calc(var(--pseudo3) * var(--container));
   display: block;
   border: solid 1px gray;
   position: absolute;
