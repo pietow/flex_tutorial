@@ -13,7 +13,7 @@
         <br>
         {{ getSumGrowth() }}
         <br>
-        of Remainder
+        of Remainder is added to the yellow area.
       </p>
       <p
         class="item-2"
@@ -27,7 +27,7 @@
         <br>
         {{ getSumGrowth() }}
         <br>
-        of Remainder
+        of Remainder is added to the yellow area.
       </p>
       <p
         class="item-3"
@@ -41,7 +41,7 @@
         <br>
         {{ getSumGrowth() }}
         <br>
-        of Remainder
+        of Remainder is added to the yellow area.
       </p>
     </div>
     <div class="flex">
